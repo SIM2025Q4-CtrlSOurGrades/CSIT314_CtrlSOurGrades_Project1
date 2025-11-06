@@ -5,9 +5,9 @@ require_once __DIR__ . '/../entities/UserProfile.php';
 class CreateUserProfileController {
     private $userProfileEntity;
 
-    public function __construct() {
-        // Controller creates its own entity
-        $this->userProfileEntity = new UserProfile();
+    public function __construct($userProfile = null) {
+        // Controller creates its ow$n entity
+        $this->userProfileEntity = $userProfile ?? new UserProfile();
     }
 
 	public function CreateUserProfile($name, $description, $status) {
@@ -24,4 +24,5 @@ class CreateUserProfileController {
 	}
 
 }
+
 ?>
