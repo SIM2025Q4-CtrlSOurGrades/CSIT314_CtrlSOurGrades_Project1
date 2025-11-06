@@ -6,8 +6,8 @@
 	class SuspendUserProfileController {
 		private $entity;
 		
-		public function __construct() {
-			$this->entity = new UserProfile();
+		public function __construct($userProfile = null) {
+			$this->entity = $userprofile ?? new UserProfile();
 		}
 		
 		public function suspendUserProfile($pID) {
@@ -15,4 +15,5 @@
 			return $result; 
 		} 
 	}
+
 
